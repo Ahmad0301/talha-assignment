@@ -20,3 +20,10 @@ app.get('/api/books/issued', (req, resp) =>
     resp.json(issuedBooks);
 });
 
+app.get('/api/books?author=AuthorName', (req, resp) => {
+    const authorName = req.query.author;
+    const booksByAuthor = data.books.filter(book => book.author);
+     resp.json(booksByAuthor);
+    
+});
+
