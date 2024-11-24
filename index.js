@@ -14,3 +14,9 @@ app.get('/api/books/available', (req, resp) =>
     resp.json(availableBooks);
 });
 
+app.get('/api/books/issued', (req, resp) =>
+{
+    const issuedBooks = data.books.filter(book => !book.isAvailable);
+    resp.json(issuedBooks);
+});
+
